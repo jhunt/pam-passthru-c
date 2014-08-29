@@ -5,7 +5,7 @@
 #include <assert.h>
 #include <security/pam_appl.h>
 
-#define PAM_SERVICE_NAME "pamtest"
+#define PAM_SERVICE_NAME "passthru"
 typedef struct {
 	char *username;
 	char *password;
