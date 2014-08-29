@@ -64,14 +64,14 @@ int main(int argc, char **argv)
 
 	rc = pam_authenticate(pam, PAM_DISALLOW_NULL_AUTHTOK);
 	if (rc != PAM_SUCCESS) {
-		fprintf(stderr, "authn failed: %s\n", pam_strerror(pam, errno));
+		fprintf(stderr, "authn failed: %s\n", pam_strerror(pam, rc));
 		pam_end(pam, PAM_SUCCESS);
 		return 1;
 	}
 
 	rc = pam_acct_mgmt(pam, PAM_DISALLOW_NULL_AUTHTOK);
 	if (rc != PAM_SUCCESS) {
-		fprintf(stderr, "authz failed: %s\n", pam_strerror(pam, errno));
+		fprintf(stderr, "authz failed: %s\n", pam_strerror(pam, rc));
 		pam_end(pam, PAM_SUCCESS);
 		return 2;
 	}
