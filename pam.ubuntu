@@ -1,0 +1,8 @@
+#
+# /etc/pam.d/passthru
+#
+
+@include common-auth
+@include common-account
+
+# vim:ft=pamconf
